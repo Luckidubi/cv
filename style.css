@@ -1,0 +1,64 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.container{
+
+  max-width: 850px;
+  margin: auto;
+   background: #81ecec;
+   padding: 3em;
+
+}
+body {
+  font-size: 100%;
+  font-family: Garamond;
+  color: #2d3436;
+
+}
+
+h1 {
+  font-size: 2.5em;
+
+
+}
+
+a {
+	color:#2d3436;
+}
+
+b, em {
+	font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.975em;
+}
+
+p {
+  font-size: 1em;
+}
+
+
+
+
+
+#table td {
+	padding: 15px;
+	margin: 10px;
+}
+
+#table p{
+	padding: 5px;
+}
+
+#table h1{
+	margin-bottom: -0.5em;
+
+}
+
+img {
+	border-radius: 2.5em;
+}
+
