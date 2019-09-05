@@ -209,8 +209,10 @@ input:invalid {
 }
 
 textarea:focus {
-  outline-color: #00b894;
-  border: 1px solid;
+  outline: 2px solid #00b894;
+}
+textarea:invalid {
+  outline-color: rgb(206, 15, 15);
 }
 
 .card label {
