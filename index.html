@@ -22,7 +22,7 @@
         </div>
       </nav>
 	  
-      <div class="hero-box">
+      <div id="about" class="hero-box">
 		  <div class="details">	
         <img
           src="https://res.cloudinary.com/luckidubi/image/upload/v1566578346/dubem.jpg"
@@ -34,7 +34,7 @@
 		  
 			 
 	
-        <div id="about" class="hero-row">
+        <div  class="hero-row">
 			
           <h1 class="title">Dubem Emma</h1>
 		</div>
@@ -240,28 +240,30 @@ style=" fill:#000000;"><path fill="#6a1b9a" d="M36,5L17,21.5L7,14l-3,1.25v17.5L7
         <div class="container">
           <div class="row">
             <div class="col ">
-				<div id="result">
-
-				</div>
+				
 			</div>
             <div class="col">
               <div class="card">
                 <h2 id="contact">Send Me A Message</h2>
-                <form id="myForm" method="POST" action="">
+                <form id="myForm" method="POST" onSubmit="return validate()">
                   <label for="title">Name</label>
-                  <input type="text" name="username" /><br />
+                  <input type="text" max="30" placeholder="Enter Your Name" name="username" required/><br />
 
                   <label for="name">Title</label>
-                  <input type="text" name="title" /><br />
+                  <input type="text" max="10" placeholder="Enter Title" name="title" required/><br />
                   <label for="email">Email</label>
-                  <input type="email" name="email" /><br />
+                  <input type="email" placeholder="Enter Your Email" name="email" required/><br />
                   <label for="message">Message</label>
                   <textarea
                     name="message"
-                    id="message"
+					id="message"
+					maxlength="300"
                     cols="30"
-                    rows="5"
-                  ></textarea>
+					rows="5"
+					placeholder="Enter Your Message"
+					required
+				  ></textarea>
+				  <input type="submit" id="button" name="submit">
                 </form>
               </div>
             </div>
@@ -273,13 +275,24 @@ style=" fill:#000000;"><path fill="#6a1b9a" d="M36,5L17,21.5L7,14l-3,1.25v17.5L7
 	<script src="public/index.js"></script>
     <script>
     //   let navLink = document.querySelectorAll(".links a");
-
+		
     //   navLink.forEach(link =>
     //     link.addEventListener("click", e => {
-    //       link.classList.add(".navLink");
+		
+	// 	  link.classList.toggle("active");
+		  	
+		  
     //       console.log(link);
-    //     })
-    //   );
+	// 	})
+	
+		
+		
+	//   );
+
+	
+	  
+	  
+
     </script>
   </body>
 </html>
