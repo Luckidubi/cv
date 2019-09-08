@@ -1,3 +1,27 @@
+<?php
+
+if (isset($_POST['username']) && isset($_POST['title']) && isset($_POST['email']) && isset($_POST['message'])) {
+$name = $_POST['username'];
+$title = $_POST['title'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+$data = $name. ',' . $title .',' . $email . ',' . $message . "\r \n";
+
+$put = file_put_contents('form_data.txt', $data, FILE_APPEND | LOCK_EX);
+
+if ($put === false) {
+    die('Failed to write to file');
+}
+ else {
+    echo "Message recieved successfully";
+    header('location:'. $_SERVER['HTTP_REFERER']);
+}
+} else {
+    die('No data recieved');
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +30,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="public/index.css" />
+    <link rel="stylesheet" href="index.css" />
    
   </head>
 
@@ -245,7 +269,7 @@ style=" fill:#000000;"><path fill="#6a1b9a" d="M36,5L17,21.5L7,14l-3,1.25v17.5L7
             <div class="col">
               <div class="card">
                 <h2 id="contact">Send Me A Message</h2>
-                <form id="myForm" action="https://luckidubi.github.io/cv/#contact"  onSubmit="return validate()">
+                <form id="myForm" action="$_SERVER['SCRIPT_NAME']"  onSubmit="return validate()" method="POST">
                   <label for="title">Name</label>
                   <input type="text" max="30" placeholder="Enter Your Name" name="username" required/><br />
 
@@ -272,27 +296,7 @@ style=" fill:#000000;"><path fill="#6a1b9a" d="M36,5L17,21.5L7,14l-3,1.25v17.5L7
         </div>
       </div>
 	</section>
-	<script src="public/index.js"></script>
-    <script>
-    //   let navLink = document.querySelectorAll(".links a");
-		
-    //   navLink.forEach(link =>
-    //     link.addEventListener("click", e => {
-		
-	// 	  link.classList.toggle("active");
-		  	
-		  
-    //       console.log(link);
-	// 	})
-	
-		
-		
-	//   );
-
-	
-	  
-	  
-
-    </script>
+	<script src="index.js"></script>
+   
   </body>
 </html>

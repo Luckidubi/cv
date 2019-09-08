@@ -8,12 +8,8 @@ const validate = () => {
     const message = form.message;
     const button = form.submit;
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const nameRegex = /^[A-Za-z]+$/;
+    const nameRegex = /^[A-Za-z ]+$/;
 
-    // button.addEventListener('submit', (e) => {
-    //     e.preventDefault();
-
-    // });
 
 
     if ((name.value == "") || (email.value == "") || (title.value == "") || (message.value == "")) {
